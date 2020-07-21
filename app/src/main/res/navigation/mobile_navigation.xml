@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/mobile_navigation"
+    app:startDestination="@id/exRatesFragment">
+
+    <fragment
+        android:id="@+id/archiveFragment"
+        android:name="com.example.exchanger.UI.ArchiveFragment"
+        android:label="ArchiveFragment" />
+    <fragment
+        android:id="@+id/converterFragment"
+        android:name="com.example.exchanger.UI.ConverterFragment"
+        android:label="ConverterFragment" />
+    <fragment
+        android:id="@+id/exRatesFragment"
+        android:name="com.example.exchanger.UI.ExRatesFragment"
+        android:label="ExRatesFragment" />
+</navigation>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/currentRates"
+        android:icon="@drawable/ic_money"
+        android:title="Exchange"/>
+
+    <item
+        android:id="@+id/convertFragment"
+        android:icon="@drawable/ic_convert"
+        android:title="Convert"/>
+    <item
+        android:id="@+id/archiveFragment"
+        android:icon="@drawable/ic_archive"
+        android:title="Archive"/>
+
+
+</menu>
