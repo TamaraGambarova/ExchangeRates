@@ -15,11 +15,11 @@ const val API_KEY = "b1f445aa71acd3dcaf3f2d4172b44258"
 interface ApiService{
 
     @GET("pubinfo?json&exchange&coursid=5")
-    fun getCurrentRates(): Deferred<CurrentRatesResponse>
+    fun getCurrentRates(): Deferred<List<CurrentRatesResponse>>
 
     companion object{
         operator fun invoke(
-            connectInterceptor: ConnectInterceptor
+            connectInterceptor: ConnectivityInterceptor
         ): ApiService {
             val requestInterceptor = Interceptor{chain ->
                 val url = chain.request()

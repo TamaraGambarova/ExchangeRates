@@ -8,9 +8,12 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import com.example.exchanger.R
 import kotlinx.android.synthetic.main.activity_main.*
+import org.kodein.di.KodeinAware
+import org.kodein.di.android.closestKodein
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), KodeinAware {
     private lateinit var navController: NavController
+    override val kodein by closestKodein()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

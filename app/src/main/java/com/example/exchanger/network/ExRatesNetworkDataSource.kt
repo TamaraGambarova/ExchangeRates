@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import com.example.exchanger.network.CurrentRatesResponse
 
 interface ExRatesNetworkDataSource {
-    val downloadedRates : LiveData<CurrentRatesResponse>
+    val downloadedRates : LiveData<List<CurrentRatesResponse>>
 
     suspend fun fetchCurrentRates()
 }

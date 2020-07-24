@@ -75,6 +75,8 @@ dependencies {
     // Kodein
     implementation "org.kodein.di:kodein-di-generic-jvm:$kodein_version"
     implementation "org.kodein.di:kodein-di-framework-android-x:$kodein_version"
+    // Better dateTime-time support even on older Android versions
+    implementation "com.jakewharton.threetenabp:threetenabp:1.1.0"
 
 
     testImplementation 'junit:junit:4.12'

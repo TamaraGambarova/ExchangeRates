@@ -11,9 +11,9 @@ class ExRatesNetworkDataSourceImpl(
     private val apiService: ApiService
 ) : ExRatesNetworkDataSource {
 
-    private val _downloadedRates = MutableLiveData<CurrentRatesResponse>()
+    private val _downloadedRates = MutableLiveData<List<CurrentRatesResponse>>()
 
-    override val downloadedRates: LiveData<CurrentRatesResponse>
+    override val downloadedRates: LiveData<List<CurrentRatesResponse>>
         get() = _downloadedRates
 
     override suspend fun fetchCurrentRates() {
