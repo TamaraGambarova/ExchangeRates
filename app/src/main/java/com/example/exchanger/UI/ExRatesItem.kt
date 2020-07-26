@@ -14,6 +14,11 @@ class ExRatesItem(
             textView_buy.text = response.buy
             textView_sell.text = response.sale
             textView_base_rate.text = response.currency
+
+            textView_label_buy.text = "Buy"
+            textView_label_sell.text = "Sell"
+            imageView_flag.setImageResource(R.drawable.ic_money)
+
         }
     }
 

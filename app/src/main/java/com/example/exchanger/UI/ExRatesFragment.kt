@@ -1,6 +1,7 @@
 package com.example.exchanger.UI
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -46,11 +47,19 @@ open class ExRatesFragment : ScopedFragment(), KodeinAware {
     private fun bindUI() = launch(Dispatchers.Main) {
         val currentRates = viewModel.rates.await()
 
+
         currentRates.observe(viewLifecycleOwner, Observer {
             if(it == null){
                 return@Observer
             }
-            update(it)
+            group_loading.visibility = View.GONE
+            //update(it)
+            Log.d("LIST!", it.size.toString())
+
+            for(i in it){
+                Log.d("LIST!", i.currency)
+
+            }
             initRecyclerView(it.toExRatesItems())
         })
     }
@@ -74,6 +83,7 @@ open class ExRatesFragment : ScopedFragment(), KodeinAware {
 
     }
     private fun List<CurrentRatesResponse>.toExRatesItems() : List<ExRatesItem>{
+
         return this.map{
             ExRatesItem(it)
         }
