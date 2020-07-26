@@ -1,7 +1,9 @@
-package com.example.exchanger.network
+package com.example.exchanger.repository
 
 import androidx.lifecycle.LiveData
 import com.example.exchanger.db.CurrentRatesDao
+import com.example.exchanger.network.CurrentRatesResponse
+import com.example.exchanger.network.ExRatesNetworkDataSource
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -17,7 +19,7 @@ class RatesRepositoryImpl(
         }
     }
 
-    override suspend fun getCurrentRates(): LiveData<List<CurrentRatesResponse>> {
+    override suspend fun getCurrentRates(): LiveData<out List<CurrentRatesResponse>> {
         return withContext(Dispatchers.IO){
             initData()
             return@withContext currentRatesDao.getRates()

@@ -2,7 +2,7 @@ package com.example.exchanger.UI
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.exchanger.network.RatesRepository
+import com.example.exchanger.repository.RatesRepository
 
 class ViewModelFactory (
     private val ratesRepository: RatesRepository

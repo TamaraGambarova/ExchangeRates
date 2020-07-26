@@ -84,7 +84,7 @@
             tools:text="27" />
 
         <ImageView
-            android:id="@+id/textView_temperature"
+            android:id="@+id/imageView_flag"
             android:layout_width="87dp"
             android:layout_height="58dp"
             android:layout_marginStart="8dp"

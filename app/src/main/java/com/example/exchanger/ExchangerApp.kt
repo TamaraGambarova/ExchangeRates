@@ -4,6 +4,8 @@ import android.app.Application
 import com.example.exchanger.UI.ViewModelFactory
 import com.example.exchanger.db.RatesDatabase
 import com.example.exchanger.network.*
+import com.example.exchanger.repository.RatesRepository
+import com.example.exchanger.repository.RatesRepositoryImpl
 import com.jakewharton.threetenabp.AndroidThreeTen
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
@@ -27,7 +29,12 @@ class ExchangerApp : Application(), KodeinAware {
         bind<ExRatesNetworkDataSource>() with singleton { ExRatesNetworkDataSourceImpl(instance()) }
 
         //repository
-        bind<RatesRepository>() with singleton { RatesRepositoryImpl(instance(), instance()) }
+        bind<RatesRepository>() with singleton {
+            RatesRepositoryImpl(
+                instance(),
+                instance()
+            )
+        }
         bind() from provider{ ViewModelFactory(instance()) }
 
     }
