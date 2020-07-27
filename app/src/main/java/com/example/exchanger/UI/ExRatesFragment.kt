@@ -46,6 +46,7 @@ open class ExRatesFragment : ScopedFragment(), KodeinAware {
 
     private fun bindUI() = launch(Dispatchers.Main) {
         val currentRates = viewModel.rates.await()
+        Log.d("FRAGM", currentRates.value?.size.toString())
 
 
         currentRates.observe(viewLifecycleOwner, Observer {
@@ -54,6 +55,8 @@ open class ExRatesFragment : ScopedFragment(), KodeinAware {
             }
             group_loading.visibility = View.GONE
             //update(it)
+            Log.d("FRAGM", currentRates.value?.size.toString())
+
             Log.d("LIST!", it.size.toString())
 
             for(i in it){

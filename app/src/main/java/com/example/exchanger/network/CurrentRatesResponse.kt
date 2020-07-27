@@ -4,13 +4,12 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 import com.google.gson.annotations.SerializedName
 
-const val CURRENT_RATES_ID = 0
+
 @Entity(tableName = "current_rates")
 data class CurrentRatesResponse (
+    @PrimaryKey(autoGenerate = true)
+    val id: Int? = null,
     @SerializedName("ccy") val currency : String,
     @SerializedName("buy") val buy : String,
     @SerializedName("sale") val sale : String
-){
-    @PrimaryKey(autoGenerate = false)
-    var id: Int = CURRENT_RATES_ID
-}
+)

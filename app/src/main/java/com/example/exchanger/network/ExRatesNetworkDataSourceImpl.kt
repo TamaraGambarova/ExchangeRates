@@ -19,6 +19,7 @@ class ExRatesNetworkDataSourceImpl(
     override suspend fun fetchCurrentRates() {
         try{
             val fetchedRates = apiService.getCurrentRates().await()
+
             _downloadedRates.postValue(fetchedRates)
         }catch (e: NoConnectivityException){
             Log.e("Connectivity", "No internet connection", e)

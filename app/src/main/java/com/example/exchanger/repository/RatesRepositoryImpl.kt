@@ -1,5 +1,6 @@
 package com.example.exchanger.repository
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import com.example.exchanger.db.CurrentRatesDao
 import com.example.exchanger.network.CurrentRatesResponse
@@ -22,6 +23,8 @@ class RatesRepositoryImpl(
     override suspend fun getCurrentRates(): LiveData<out List<CurrentRatesResponse>> {
         return withContext(Dispatchers.IO){
             initData()
+            Log.d("REPOs", currentRatesDao.getRates().value?.size.toString())
+
             return@withContext currentRatesDao.getRates()
         }
 
