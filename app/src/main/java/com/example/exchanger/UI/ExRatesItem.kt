@@ -17,7 +17,9 @@ class ExRatesItem(
 
             textView_label_buy.text = "Buy"
             textView_label_sell.text = "Sell"
-            imageView_flag.setImageResource(R.drawable.ic_money)
+
+
+            IconsConstants.icons[response.currency]?.let { imageView_flag.setImageResource(it) }
 
         }
     }
