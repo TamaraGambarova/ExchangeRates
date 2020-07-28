@@ -1,10 +1,7 @@
 package com.example.exchanger.db
 
 import androidx.lifecycle.LiveData
-import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Query
+import androidx.room.*
 import com.example.exchanger.network.CurrentRatesResponse
 
 @Dao
@@ -14,5 +11,8 @@ interface CurrentRatesDao {
 
     @Query("select * from current_rates")
     fun getRates() : LiveData<List<CurrentRatesResponse>>
+
+    @Query("delete from current_rates")
+    fun deleteOldRates()
 
 }

@@ -30,6 +30,10 @@ class RatesRepositoryImpl(
 
     }
 
+    override suspend fun deleteOldRates() {
+        currentRatesDao.deleteOldRates()
+    }
+
     private fun saveFetchedCurrentRates(fetchedRates : List<CurrentRatesResponse>){
         GlobalScope.launch (Dispatchers.IO){
             currentRatesDao.insert(fetchedRates)
@@ -37,6 +41,7 @@ class RatesRepositoryImpl(
     }
 
     private suspend fun initData(){
+        deleteOldRates()
         currentRatesNetworkDataSource.fetchCurrentRates()
     }
 
