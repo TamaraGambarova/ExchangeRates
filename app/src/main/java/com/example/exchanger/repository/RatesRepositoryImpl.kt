@@ -23,16 +23,12 @@ class RatesRepositoryImpl(
     override suspend fun getCurrentRates(): LiveData<out List<CurrentRatesResponse>> {
         return withContext(Dispatchers.IO){
             initData()
-            Log.d("REPOs", currentRatesDao.getRates().value?.size.toString())
 
             return@withContext currentRatesDao.getRates()
         }
 
     }
 
-    override suspend fun deleteOldRates() {
-        currentRatesDao.deleteOldRates()
-    }
 
     private fun saveFetchedCurrentRates(fetchedRates : List<CurrentRatesResponse>){
         GlobalScope.launch (Dispatchers.IO){
@@ -41,7 +37,6 @@ class RatesRepositoryImpl(
     }
 
     private suspend fun initData(){
-        deleteOldRates()
         currentRatesNetworkDataSource.fetchCurrentRates()
     }
 

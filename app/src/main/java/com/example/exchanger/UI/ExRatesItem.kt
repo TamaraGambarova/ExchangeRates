@@ -11,8 +11,8 @@ class ExRatesItem(
 ) : Item(){
     override fun bind(viewHolder: ViewHolder, position: Int) {
         viewHolder.apply {
-            textView_buy.text = response.buy
-            textView_sell.text = response.sale
+            textView_buy.text = response.buy.toPlainString()
+            textView_sell.text = response.sale.toPlainString()
             textView_base_rate.text = response.currency
 
             textView_label_buy.text = "Buy"

@@ -30,7 +30,6 @@ interface ApiService{
                     .newBuilder()
                     .url(url)
                     .build()
-                Log.d("REQUEST!!", request.toString())
                 return@Interceptor chain.proceed(request)
             }
             val okHttpClient = OkHttpClient.Builder()
@@ -45,8 +44,6 @@ interface ApiService{
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(ApiService::class.java)
-
-            Log.d("READYY", r.toString())
 
             return r
         }

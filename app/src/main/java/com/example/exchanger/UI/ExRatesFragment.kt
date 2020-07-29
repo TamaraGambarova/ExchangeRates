@@ -69,8 +69,8 @@ open class ExRatesFragment : ScopedFragment(), KodeinAware {
 
     private fun update(rates: List<CurrentRatesResponse>){
         for(item in rates){
-            textView_buy.text = item.buy
-            textView_sell.text = item.sale
+            textView_buy.text = item.buy.toPlainString()
+            textView_sell.text = item.sale.toPlainString()
         }
     }
 

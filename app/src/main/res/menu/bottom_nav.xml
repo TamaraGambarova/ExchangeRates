@@ -4,7 +4,6 @@
         android:id="@+id/currentRates"
         android:icon="@drawable/ic_money"
         android:title="Exchange"/>
-
     <item
         android:id="@+id/convertFragment"
         android:icon="@drawable/ic_convert"
@@ -13,6 +12,9 @@
         android:id="@+id/archiveFragment"
         android:icon="@drawable/ic_archive"
         android:title="Archive"/>
+
+
+
 
 
 </menu>
