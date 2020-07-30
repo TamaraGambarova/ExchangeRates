@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/currentRates"
+        android:id="@+id/exRatesFragment"
         android:icon="@drawable/ic_money"
         android:title="@string/menu_label_exchange"/>
     <item
-        android:id="@+id/convertFragment"
+        android:id="@+id/converterFragment"
         android:icon="@drawable/ic_convert"
         android:title="@string/menu_label_convert"/>
     <item
