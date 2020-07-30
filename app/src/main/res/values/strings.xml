@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">Exchanger</string>
+    <string name="label_buy">Buy</string>
+    <string name="label_sale">Sale</string>
+    <string name="menu_label_exchange">Exchange</string>
+    <string name="menu_label_convert">Convert</string>
+    <string name="menu_label_archive">Archive</string>
+    <string name="label_toolbar_exchange">Exchange Rates</string>
+    <string name="label_toolbar_archive">Archive</string>
+    <string name="label_toolbar_converter">Converter</string>
 </resources>

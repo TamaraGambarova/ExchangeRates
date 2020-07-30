@@ -1,7 +1,7 @@
 package com.example.exchanger
 
 import android.app.Application
-import com.example.exchanger.UI.ViewModelFactory
+import com.example.exchanger.ui.ViewModelFactory
 import com.example.exchanger.db.RatesDatabase
 import com.example.exchanger.network.*
 import com.example.exchanger.repository.RatesRepository

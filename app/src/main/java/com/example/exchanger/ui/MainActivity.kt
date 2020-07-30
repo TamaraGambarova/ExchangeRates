@@ -1,4 +1,4 @@
-package com.example.exchanger.UI
+package com.example.exchanger.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

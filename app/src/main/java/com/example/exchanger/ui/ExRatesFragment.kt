@@ -1,7 +1,6 @@
-package com.example.exchanger.UI
+package com.example.exchanger.ui
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +11,6 @@ import com.example.exchanger.R
 import com.example.exchanger.network.CurrentRatesResponse
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
-import kotlinx.android.synthetic.main.ex_rates_item.*
 import kotlinx.android.synthetic.main.fragment_ex_rates.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -46,32 +44,15 @@ open class ExRatesFragment : ScopedFragment(), KodeinAware {
 
     private fun bindUI() = launch(Dispatchers.Main) {
         val currentRates = viewModel.rates.await()
-        Log.d("FRAGM", currentRates.value?.size.toString())
-
 
         currentRates.observe(viewLifecycleOwner, Observer {
             if(it == null){
                 return@Observer
             }
             group_loading.visibility = View.GONE
-            //update(it)
-            Log.d("FRAGM", currentRates.value?.size.toString())
 
-            Log.d("LIST!", it.size.toString())
-
-            for(i in it){
-                Log.d("LIST!", i.currency)
-
-            }
             initRecyclerView(it.toExRatesItems())
         })
-    }
-
-    private fun update(rates: List<CurrentRatesResponse>){
-        for(item in rates){
-            textView_buy.text = item.buy.toPlainString()
-            textView_sell.text = item.sale.toPlainString()
-        }
     }
 
     private fun initRecyclerView(items:  List<ExRatesItem>){
@@ -88,7 +69,7 @@ open class ExRatesFragment : ScopedFragment(), KodeinAware {
     private fun List<CurrentRatesResponse>.toExRatesItems() : List<ExRatesItem>{
 
         return this.map{
-            ExRatesItem(it)
+            ExRatesItem(it, context)
         }
     }
 }

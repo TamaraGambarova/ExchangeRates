@@ -3,15 +3,15 @@
     <item
         android:id="@+id/currentRates"
         android:icon="@drawable/ic_money"
-        android:title="Exchange"/>
+        android:title="@string/menu_label_exchange"/>
     <item
         android:id="@+id/convertFragment"
         android:icon="@drawable/ic_convert"
-        android:title="Convert"/>
+        android:title="@string/menu_label_convert"/>
     <item
         android:id="@+id/archiveFragment"
         android:icon="@drawable/ic_archive"
-        android:title="Archive"/>
+        android:title="@string/menu_label_archive"/>
 
 
 

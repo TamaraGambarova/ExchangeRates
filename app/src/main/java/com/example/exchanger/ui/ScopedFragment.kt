@@ -1,11 +1,10 @@
-package com.example.exchanger.UI
+package com.example.exchanger.ui
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
-import okhttp3.Dispatcher
 import kotlin.coroutines.CoroutineContext
 
 abstract class ScopedFragment : Fragment(), CoroutineScope {

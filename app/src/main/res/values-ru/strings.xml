@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Exchanger</string>
+    <string name="label_buy">Покупка</string>
+    <string name="label_sale">Продажа</string>
+    <string name="menu_label_exchange">Курс</string>
+    <string name="menu_label_convert">Конвертер</string>
+    <string name="menu_label_archive">Архив</string>
+    <string name="label_toolbar_exchange">Курс валют</string>
+    <string name="label_toolbar_archive">Архив валют</string>
+    <string name="label_toolbar_converter">Конвертер валют</string>
+</resources>

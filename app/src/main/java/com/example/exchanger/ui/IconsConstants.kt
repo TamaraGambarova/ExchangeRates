@@ -1,4 +1,4 @@
-package com.example.exchanger.UI
+package com.example.exchanger.ui
 
 import com.example.exchanger.R
 

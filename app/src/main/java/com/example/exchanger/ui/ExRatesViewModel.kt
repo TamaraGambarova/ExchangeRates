@@ -1,6 +1,5 @@
-package com.example.exchanger.UI
+package com.example.exchanger.ui
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import com.example.exchanger.repository.RatesRepository
 import com.example.exchanger.util.lazyDeffered

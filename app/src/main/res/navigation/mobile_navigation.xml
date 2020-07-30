@@ -7,18 +7,18 @@
     app:startDestination="@id/exRatesFragment">
     <fragment
         android:id="@+id/exRatesFragment"
-        android:name="com.example.exchanger.UI.ExRatesFragment"
-        android:label="Current Exchange Rates"
+        android:name="com.example.exchanger.ui.ExRatesFragment"
+        android:label="@string/label_toolbar_exchange"
         tools:layout="@layout/fragment_ex_rates"/>
     <fragment
         android:id="@+id/converterFragment"
-        android:name="com.example.exchanger.UI.ConverterFragment"
-        android:label="Exchange Rates Converter"
+        android:name="com.example.exchanger.ui.ConverterFragment"
+        android:label="@string/label_toolbar_converter"
         tools:layout="@layout/fragment_converter"/>
     <fragment
         android:id="@+id/archiveFragment"
-        android:name="com.example.exchanger.UI.ArchiveFragment"
-        android:label="Exchange Rates Archive"
+        android:name="com.example.exchanger.ui.ArchiveFragment"
+        android:label="@string/label_toolbar_archive"
         tools:layout="@layout/fragment_archive"/>
 
 
