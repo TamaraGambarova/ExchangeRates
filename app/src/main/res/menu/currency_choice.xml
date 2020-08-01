@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/usd"
+        android:icon="@drawable/usd"
+        android:title="@string/label_usd" />
+    <item android:id="@+id/eur"
+        android:icon="@drawable/eur"
+        android:title="@string/label_eur" />
+    <item android:id="@+id/rur"
+        android:icon="@drawable/rur"
+        android:title="@string/label_rur" />
+    <item android:id="@+id/btc"
+        android:icon="@drawable/btc"
+        android:title="@string/label_btc" />
+</menu>

@@ -66,6 +66,7 @@ open class ExRatesFragment : ScopedFragment(), KodeinAware {
 
 
     }
+
     private fun List<CurrentRatesResponse>.toExRatesItems() : List<ExRatesItem>{
 
         return this.map{

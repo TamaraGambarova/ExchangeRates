@@ -8,4 +8,6 @@
     <string name="label_toolbar_exchange">Курс валют</string>
     <string name="label_toolbar_archive">Архив валют</string>
     <string name="label_toolbar_converter">Конвертер валют</string>
+    <string name="input_hint">Enter number</string>
+    <string name="change_currency">change_currency</string>
 </resources>

@@ -8,4 +8,11 @@
     <string name="label_toolbar_exchange">Exchange Rates</string>
     <string name="label_toolbar_archive">Archive</string>
     <string name="label_toolbar_converter">Converter</string>
+    <string name="label_usd">USD</string>
+    <string name="label_eur">EUR</string>
+    <string name="label_rur">RUR</string>
+    <string name="label_btc">BTC</string>
+    <string name="input_hint">Enter number</string>
+    <string name="drop_down_description">currency</string>
+    <string name="change_currency">change_currency</string>
 </resources>
