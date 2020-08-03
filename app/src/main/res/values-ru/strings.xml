@@ -10,4 +10,5 @@
     <string name="label_toolbar_converter">Конвертер валют</string>
     <string name="input_hint">Enter number</string>
     <string name="change_currency">change_currency</string>
+    <string name="label_uah">UAH</string>
 </resources>

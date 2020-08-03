@@ -18,8 +18,21 @@
         android:contentDescription="@string/drop_down_description"
         />
 
+    <TextView
+        android:id="@+id/currency_drop_down_from_label"
+        android:layout_width="98dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="140dp"
+        android:contentDescription="@string/drop_down_description"
+        android:text="@string/label_usd"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:labelFor="@id/currency_drop_down_from"/>
+
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/input_from_field"
+        android:id="@+id/inputField_from"
         android:layout_width="238dp"
         android:layout_height="85dp"
         android:hint="@string/input_hint"
@@ -28,6 +41,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputField_from_"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="numberDecimal"/>
@@ -61,6 +75,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/currency_drop_down_to_label"
+        android:layout_width="117dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="420dp"
+        android:contentDescription="@string/drop_down_description"
+        android:text="@string/label_uah"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:labelFor="@id/currency_drop_down_to"/>
+
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/inputField_to"
         android:layout_width="238dp"
@@ -71,11 +98,12 @@
         android:layout_marginBottom="646dp"
         android:hint="@string/input_hint"
         app:boxBackgroundColor="@android:color/white"
-        app:layout_constraintBottom_toBottomOf="@+id/input_from_field"
+        app:layout_constraintBottom_toBottomOf="@+id/inputField_from"
         app:layout_constraintStart_toEndOf="@+id/currency_drop_down_from"
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/inputField_to_"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:inputType="numberDecimal" />
