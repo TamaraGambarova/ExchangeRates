@@ -5,9 +5,10 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.exchanger.network.CurrentRatesResponse
+import com.example.exchanger.network.ResponseModel
 
 @Database(
-    entities = [CurrentRatesResponse::class],
+    entities = [ResponseModel::class],
     version = 1
 )
 abstract class RatesDatabase : RoomDatabase() {

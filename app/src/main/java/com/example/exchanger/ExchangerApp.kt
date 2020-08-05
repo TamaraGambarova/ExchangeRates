@@ -4,12 +4,14 @@ import android.app.Application
 import com.example.exchanger.ui.ViewModelFactory
 import com.example.exchanger.db.RatesDatabase
 import com.example.exchanger.network.*
+import com.example.exchanger.repository.AssetsRepository
 import com.example.exchanger.repository.RatesRepository
 import com.example.exchanger.repository.RatesRepositoryImpl
 import com.jakewharton.threetenabp.AndroidThreeTen
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.android.x.androidXModule
+import org.kodein.di.bindings.subTypes
 import org.kodein.di.generic.bind
 import org.kodein.di.generic.instance
 import org.kodein.di.generic.provider
@@ -27,6 +29,7 @@ class ExchangerApp : Application(), KodeinAware {
         bind<ConnectivityInterceptor>() with singleton { ConnectivityInterceptorImpl(instance()) }
         bind() from singleton { ApiService(instance()) }
         bind<ExRatesNetworkDataSource>() with singleton { ExRatesNetworkDataSourceImpl(instance()) }
+        //bind<ExRatesNetworkDataSource>() with singleton { AssetesDataSourceImpl() }
 
         //repository
         bind<RatesRepository>() with singleton {
@@ -35,8 +38,8 @@ class ExchangerApp : Application(), KodeinAware {
                 instance()
             )
         }
-        bind() from provider{ ViewModelFactory(instance()) }
 
+        bind() from provider{ ViewModelFactory(instance(), instance()) }
     }
 
     override fun onCreate() {

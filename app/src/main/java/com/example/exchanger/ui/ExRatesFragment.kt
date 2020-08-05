@@ -4,11 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.exchanger.R
 import com.example.exchanger.network.CurrentRatesResponse
+import com.example.exchanger.network.ResponseModel
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.fragment_ex_rates.*
@@ -43,9 +45,16 @@ open class ExRatesFragment : ScopedFragment(), KodeinAware {
     }
 
     private fun bindUI() = launch(Dispatchers.Main) {
+        val all = MutableLiveData<List<ResponseModel>>()
         val currentRates = viewModel.rates.await()
+        val curentAssets = viewModel.assets.await()
 
-        currentRates.observe(viewLifecycleOwner, Observer {
+        var list: MutableList<ResponseModel> = ArrayList()
+        list.addAll(currentRates.value!!)
+        list.addAll(curentAssets.value!!)
+        all.value = list
+       // all.value = currentRates.value?.plus(curentAssets.value)
+        all.observe(viewLifecycleOwner, Observer {
             if(it == null){
                 return@Observer
             }
@@ -63,12 +72,9 @@ open class ExRatesFragment : ScopedFragment(), KodeinAware {
             layoutManager = LinearLayoutManager(this@ExRatesFragment.context)
             adapter = groupAdapter
         }
-
-
     }
 
-    private fun List<CurrentRatesResponse>.toExRatesItems() : List<ExRatesItem>{
-
+    private fun List<ResponseModel>.toExRatesItems() : List<ExRatesItem>{
         return this.map{
             ExRatesItem(it, context)
         }
