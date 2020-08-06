@@ -19,11 +19,11 @@ data class CurrentRatesResponse (
 class Converters {
     @TypeConverter
     fun bigDecimalToString(value: BigDecimal?): String? {
-        return value?.let { it.toPlainString() }
+        return value?.toPlainString()
     }
 
     @TypeConverter
     fun stringToBigDecimal(value: String?): BigDecimal? {
-        return value?.let { it.toBigDecimal()}
+        return value?.toBigDecimal()
     }
 }

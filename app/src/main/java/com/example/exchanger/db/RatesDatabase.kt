@@ -4,11 +4,10 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
-import com.example.exchanger.network.CurrentRatesResponse
-import com.example.exchanger.network.ResponseModel
+import com.example.exchanger.network.RatesModel
 
 @Database(
-    entities = [ResponseModel::class],
+    entities = [RatesModel::class],
     version = 1
 )
 abstract class RatesDatabase : RoomDatabase() {

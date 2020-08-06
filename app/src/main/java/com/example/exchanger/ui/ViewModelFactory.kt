@@ -2,15 +2,13 @@ package com.example.exchanger.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.exchanger.repository.AssetsRepository
-import com.example.exchanger.repository.RatesRepository
+import com.example.exchanger.repository.Repository
 
 class ViewModelFactory (
-    private val ratesRepository: RatesRepository,
-    private val assetsRepository: AssetsRepository
+    private val repository: Repository
 ) : ViewModelProvider.NewInstanceFactory(){
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel?> create(modelClass: Class<T>): T{
-        return ExRatesViewModel(ratesRepository,assetsRepository) as T
+        return ExRatesViewModel(repository) as T
     }
 }

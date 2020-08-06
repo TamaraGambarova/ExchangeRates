@@ -4,13 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.exchanger.R
-import com.example.exchanger.network.CurrentRatesResponse
-import com.example.exchanger.network.ResponseModel
+import com.example.exchanger.network.RatesModel
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.ViewHolder
 import kotlinx.android.synthetic.main.fragment_ex_rates.*
@@ -45,16 +43,16 @@ open class ExRatesFragment : ScopedFragment(), KodeinAware {
     }
 
     private fun bindUI() = launch(Dispatchers.Main) {
-        val all = MutableLiveData<List<ResponseModel>>()
-        val currentRates = viewModel.rates.await()
-        val curentAssets = viewModel.assets.await()
+        //val all = MutableLiveData<List<RatesModel>>()
+        val currentData = viewModel.data.await()
+        //val curentAssets = viewModel.assets.await()
 
-        var list: MutableList<ResponseModel> = ArrayList()
-        list.addAll(currentRates.value!!)
-        list.addAll(curentAssets.value!!)
-        all.value = list
+        //var list: MutableList<RatesModel> = ArrayList()
+        //list.addAll(currentRates.value!!)
+        //list.addAll(curentAssets.value!!)
+        //all.value = list
        // all.value = currentRates.value?.plus(curentAssets.value)
-        all.observe(viewLifecycleOwner, Observer {
+        currentData.observe(viewLifecycleOwner, Observer {
             if(it == null){
                 return@Observer
             }
@@ -64,7 +62,7 @@ open class ExRatesFragment : ScopedFragment(), KodeinAware {
         })
     }
 
-    private fun initRecyclerView(items:  List<ExRatesItem>){
+    private fun initRecyclerView(items:  List<CurrentDataItem>){
         val groupAdapter = GroupAdapter<ViewHolder>().apply {
             addAll(items)
         }
@@ -74,9 +72,9 @@ open class ExRatesFragment : ScopedFragment(), KodeinAware {
         }
     }
 
-    private fun List<ResponseModel>.toExRatesItems() : List<ExRatesItem>{
+    private fun List<RatesModel>.toExRatesItems() : List<CurrentDataItem>{
         return this.map{
-            ExRatesItem(it, context)
+            CurrentDataItem(it, context)
         }
     }
 }
